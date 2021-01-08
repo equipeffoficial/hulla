@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hulla/screens/base_screen/base_screen.dart';
+import 'package:hulla/screens/login_screen/login_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +18,24 @@ class MyApp extends StatelessWidget {
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      //home: ,
+
+      onGenerateRoute: (settings){
+        switch(settings.name){
+
+          case '/login' :
+            return MaterialPageRoute(
+                builder: (_) => LoginScreen());
+
+          case '/':
+          default:
+            return MaterialPageRoute(
+                builder: (_) => BaseScreen(),
+                settings: settings);
+        }
+
+
+      },
+
     );
   }
 }
