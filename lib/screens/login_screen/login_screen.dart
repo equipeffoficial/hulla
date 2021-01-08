@@ -38,6 +38,34 @@ class LoginScreen extends StatelessWidget {
               autocorrect: false,
 
             ),
+                const SizedBox(height: 16),
+
+                TextFormField(
+                  controller: passController,
+
+                  decoration: const InputDecoration(hintText: "Senha"),
+                  autocorrect: false,
+                  obscureText: true,
+                  validator: (pass){
+                    if(pass.isEmpty || pass.length < 6)
+                      return "Senha Inválida";
+                    return null;
+                  },
+                ),
+
+                const SizedBox(height: 16),
+
+                RaisedButton(
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+
+                  onPressed: (){},
+
+                  color: Theme.of(context).primaryColor,
+                  disabledColor:Theme.of(context).primaryColor.withAlpha(50) ,
+                  textColor: Colors.white,
+
+                  child: Text("Entrar", style: TextStyle(fontSize: 15),),
+                ),
   ]
 
           ),
