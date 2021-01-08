@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
               TextFormField(
               controller: emailController,
 
-              decoration: const InputDecoration(hintText: "E-mail"),
+              decoration: const InputDecoration(hintText: "E-mail", ),
               keyboardType: TextInputType.emailAddress,
               autocorrect: false,
 
@@ -53,18 +53,22 @@ class LoginScreen extends StatelessWidget {
                   },
                 ),
 
-                const SizedBox(height: 16),
+                const SizedBox(height: 24),
 
-                RaisedButton(
-                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: RaisedButton(
 
-                  onPressed: (){},
+                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
 
-                  color: Theme.of(context).primaryColor,
-                  disabledColor:Theme.of(context).primaryColor.withAlpha(50) ,
-                  textColor: Colors.white,
+                    onPressed: (){},
 
-                  child: Text("Entrar", style: TextStyle(fontSize: 15),),
+                    color: Theme.of(context).primaryColor,
+                    disabledColor:Theme.of(context).primaryColor.withAlpha(50) ,
+                    textColor: Colors.white,
+
+                    child: Text("Entrar", style: TextStyle(fontSize: 16),),
+                  ),
                 ),
   ]
 
