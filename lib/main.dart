@@ -9,9 +9,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Hulla',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.deepPurple,
+        scaffoldBackgroundColor: Colors.white,
+
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       //home: ,
