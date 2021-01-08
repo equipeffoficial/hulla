@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hulla/screens/base_screen/base_screen.dart';
 import 'package:hulla/screens/login_screen/login_screen.dart';
@@ -11,9 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Hulla',
       theme: ThemeData(
-        primaryColor: Colors.deepPurple,
+        primaryColor: Color.fromARGB(255, 0, 0, 180),
         scaffoldBackgroundColor: Colors.white,
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
           case '/':
           default:
             return MaterialPageRoute(
-                builder: (_) => BaseScreen(),
+                builder: (_) => LoginScreen(),
                 settings: settings);
         }
 
