@@ -1,11 +1,13 @@
 
 import 'package:flutter/material.dart';
 
+
 class LoginScreen extends StatelessWidget {
 
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,11 @@ class LoginScreen extends StatelessWidget {
               decoration: const InputDecoration(hintText: "E-mail", ),
               keyboardType: TextInputType.emailAddress,
               autocorrect: false,
+                validator: (email){
+                  if(emailValid(email))
+                    return "E-mail inválido";
+                  return null;
+                },
 
             ),
                 const SizedBox(height: 16),
@@ -70,17 +77,20 @@ class LoginScreen extends StatelessWidget {
                     child: Text("Entrar", style: TextStyle(fontSize: 16),),
                   ),
                 ),
-  ]
+              ]
 
           ),
         ),
-
-
-
-
         )
       ),
     );
 
   }
+  //validação de email
+  bool emailValid(String email) {
+    final RegExp regex = RegExp(
+        r"^(([^<>()[\]\\.,;:\s@\']+(\.[^<>()[\]\\.,;:\s@\']+)*)|(\'.+\'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$");
+    return regex.hasMatch(email);
+  }
+
 }
